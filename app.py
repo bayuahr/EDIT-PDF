@@ -57,6 +57,7 @@ def main():
         can.save()
         packet.seek(0)
         new_pdf = PdfFileReader(packet)
+        print("axa.pdf")
         existing_pdf = PdfFileReader(open("axa.pdf", "rb"))
         output = PdfFileWriter()
         page = existing_pdf.getPage(0)
@@ -66,7 +67,7 @@ def main():
         output.write(outputStream)
         outputStream.close()
         with c2:
-            displayPDF("dest.pdf")
+            displayPDF("axa.pdf")
         st.success("PDF processed successfully!")
 if __name__ == "__main__":
     main()
